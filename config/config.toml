@@ -1,0 +1,16 @@
+[echo]
+listen = "0.0.0.0:8080"
+[jwt]
+exp = 6
+secret = "GfK@boqLRaGrce2Q"
+[admin]
+user = "root"
+password = "M@hLuxY5y$P7cyQh"
+[mysql]
+host = "172.21.2.59"
+port = 3306
+user = "root"
+password = "gQ9oww2tua"
+database = "support"
+max_idle_conn = 10
+max_open_conn = 5

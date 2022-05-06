@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6fa60e79.chunk.css",
+    "main.js": "/static/js/main.4aa06b7a.chunk.js",
+    "main.js.map": "/static/js/main.4aa06b7a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.406dd86f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.406dd86f.js.map",
+    "static/css/2.1fbfb4c0.chunk.css": "/static/css/2.1fbfb4c0.chunk.css",
+    "static/js/2.79b106d8.chunk.js": "/static/js/2.79b106d8.chunk.js",
+    "static/js/2.79b106d8.chunk.js.map": "/static/js/2.79b106d8.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.1fbfb4c0.chunk.css.map": "/static/css/2.1fbfb4c0.chunk.css.map",
+    "static/css/main.6fa60e79.chunk.css.map": "/static/css/main.6fa60e79.chunk.css.map",
+    "static/js/2.79b106d8.chunk.js.LICENSE.txt": "/static/js/2.79b106d8.chunk.js.LICENSE.txt",
+    "static/media/add_icon.d7cd207f.svg": "/static/media/add_icon.d7cd207f.svg",
+    "static/media/article-gow-logo.81743846.svg": "/static/media/article-gow-logo.81743846.svg",
+    "static/media/home-bg-1.png": "/static/media/home-bg-1.d4e851f7.png",
+    "static/media/home-bg-2.png": "/static/media/home-bg-2.13ef939b.png",
+    "static/media/icon-back.b1e650e4.svg": "/static/media/icon-back.b1e650e4.svg",
+    "static/media/icon-empty.45078ac5.svg": "/static/media/icon-empty.45078ac5.svg",
+    "static/media/icon-lang.cf72d592.svg": "/static/media/icon-lang.cf72d592.svg",
+    "static/media/icon-left.a0db7942.svg": "/static/media/icon-left.a0db7942.svg",
+    "static/media/icon-logo.3e6252bb.svg": "/static/media/icon-logo.3e6252bb.svg",
+    "static/media/icon-search.c05059f4.svg": "/static/media/icon-search.c05059f4.svg",
+    "static/media/icon-service.8513d98f.svg": "/static/media/icon-service.8513d98f.svg",
+    "static/media/minus_icon.944ea7ed.svg": "/static/media/minus_icon.944ea7ed.svg",
+    "static/media/telegram_icon.b8331143.svg": "/static/media/telegram_icon.b8331143.svg",
+    "static/media/twitter_icon.894943a2.svg": "/static/media/twitter_icon.894943a2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.406dd86f.js",
+    "static/css/2.1fbfb4c0.chunk.css",
+    "static/js/2.79b106d8.chunk.js",
+    "static/css/main.6fa60e79.chunk.css",
+    "static/js/main.4aa06b7a.chunk.js"
+  ]
+}

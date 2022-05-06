@@ -1,0 +1,679 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/adm/add_article": {
+            "post": {
+                "tags": [
+                    "Article-文章"
+                ],
+                "summary": "添加文章",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.Article"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/add_category": {
+            "post": {
+                "tags": [
+                    "Category-分类"
+                ],
+                "summary": "增加分类",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/del_article": {
+            "post": {
+                "tags": [
+                    "Article-文章"
+                ],
+                "summary": "删除文章",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.DelQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/del_category": {
+            "post": {
+                "tags": [
+                    "Category-分类"
+                ],
+                "summary": "删除分类",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.DelQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/get_article": {
+            "get": {
+                "tags": [
+                    "Article-文章"
+                ],
+                "summary": "查询文章",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "name": "cate_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/data.Article"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/mod_article": {
+            "post": {
+                "tags": [
+                    "Article-文章"
+                ],
+                "summary": "修改文章",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/mod_category": {
+            "post": {
+                "tags": [
+                    "Category-分类"
+                ],
+                "summary": "修改分类",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/data.Category"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/adm/upload_img": {
+            "post": {
+                "tags": [
+                    "Article-文章"
+                ],
+                "summary": "添加文章",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "token",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/get_article": {
+            "get": {
+                "tags": [
+                    "UseApi"
+                ],
+                "summary": "查询文章",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "cate_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page_size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/data.Article"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/get_category": {
+            "get": {
+                "tags": [
+                    "UseApi"
+                ],
+                "summary": "查询分类",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "lang",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "parent_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/data.Category"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/api/match_article": {
+            "get": {
+                "tags": [
+                    "UseApi"
+                ],
+                "summary": "title关键字查询文章(至多返回30条数据)",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "匹配数据",
+                        "name": "sub_str",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "语言",
+                        "name": "lang",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/data.Article"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "auth-登陆认证"
+                ],
+                "summary": "登陆",
+                "parameters": [
+                    {
+                        "description": "请求数据",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/biz.LoginData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "返回数据",
+                        "schema": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/biz.BaseJson"
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "biz.BaseJson": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {}
+            }
+        },
+        "biz.LoginData": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "passwd": {
+                    "type": "string"
+                }
+            }
+        },
+        "data.Article": {
+            "type": "object",
+            "properties": {
+                "cate_id": {
+                    "type": "integer"
+                },
+                "created": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "lang": {
+                    "type": "string"
+                },
+                "markdown": {
+                    "type": "string"
+                },
+                "rich_text": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "updated": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                }
+            }
+        },
+        "data.Category": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "intro": {
+                    "type": "string"
+                },
+                "lang": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parent_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "data.DelQuery": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "lang": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

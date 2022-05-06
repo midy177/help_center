@@ -1,0 +1,400 @@
+definitions:
+  biz.BaseJson:
+    properties:
+      code:
+        type: integer
+      data: {}
+    type: object
+  biz.LoginData:
+    properties:
+      name:
+        type: string
+      passwd:
+        type: string
+    type: object
+  data.Article:
+    properties:
+      cate_id:
+        type: integer
+      created:
+        type: string
+      id:
+        type: integer
+      lang:
+        type: string
+      markdown:
+        type: string
+      rich_text:
+        type: string
+      status:
+        type: integer
+      summary:
+        type: string
+      title:
+        type: string
+      updated:
+        type: string
+      uri:
+        type: string
+    type: object
+  data.Category:
+    properties:
+      id:
+        type: integer
+      intro:
+        type: string
+      lang:
+        type: string
+      name:
+        type: string
+      parent_id:
+        type: integer
+    type: object
+  data.DelQuery:
+    properties:
+      id:
+        type: integer
+      lang:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /adm/add_article:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.Article'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 添加文章
+      tags:
+      - Article-文章
+  /adm/add_category:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.Category'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 增加分类
+      tags:
+      - Category-分类
+  /adm/del_article:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.DelQuery'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 删除文章
+      tags:
+      - Article-文章
+  /adm/del_category:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.DelQuery'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 删除分类
+      tags:
+      - Category-分类
+  /adm/get_article:
+    get:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - in: query
+        name: cate_id
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: lang
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: page_size
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/data.Article'
+                  type: array
+              type: object
+      summary: 查询文章
+      tags:
+      - Article-文章
+  /adm/mod_article:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.Category'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 修改文章
+      tags:
+      - Article-文章
+  /adm/mod_category:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/data.Category'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 修改分类
+      tags:
+      - Category-分类
+  /adm/upload_img:
+    post:
+      parameters:
+      - description: token
+        in: header
+        name: token
+        required: true
+        type: string
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 添加文章
+      tags:
+      - Article-文章
+  /api/get_article:
+    get:
+      parameters:
+      - in: query
+        name: cate_id
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: lang
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: page_size
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/data.Article'
+                  type: array
+              type: object
+      summary: 查询文章
+      tags:
+      - UseApi
+  /api/get_category:
+    get:
+      parameters:
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: lang
+        type: string
+      - in: query
+        name: parent_id
+        type: integer
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/data.Category'
+                  type: array
+              type: object
+      summary: 查询分类
+      tags:
+      - UseApi
+  /api/match_article:
+    get:
+      parameters:
+      - description: 匹配数据
+        in: query
+        name: sub_str
+        required: true
+        type: string
+      - description: 语言
+        in: query
+        name: lang
+        required: true
+        type: string
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/data.Article'
+                  type: array
+              type: object
+      summary: title关键字查询文章(至多返回30条数据)
+      tags:
+      - UseApi
+  /auth/login:
+    post:
+      parameters:
+      - description: 请求数据
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/biz.LoginData'
+      responses:
+        "200":
+          description: 返回数据
+          schema:
+            allOf:
+            - $ref: '#/definitions/biz.BaseJson'
+            - properties:
+                data:
+                  type: string
+              type: object
+      summary: 登陆
+      tags:
+      - auth-登陆认证
+swagger: "2.0"
